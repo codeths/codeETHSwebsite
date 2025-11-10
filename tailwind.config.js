@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'eths-orange': '#FF6B35',
-        'eths-navy': '#003B5C',
+        'eths-orange': '#d15d19',
+        'eths-navy': '#00338d',
         'eths-blue': '#0066A1',
       },
     },

@@ -1,11 +1,12 @@
 <script setup>
-import { Github } from 'lucide-vue-next'
+import { Github, ExternalLink } from 'lucide-vue-next'
 
 defineProps({
   name: String,
   description: String,
   techStack: Array,
   githubUrl: String,
+  websiteUrl: String,
   featured: {
     type: Boolean,
     default: false
@@ -29,15 +30,28 @@ defineProps({
           {{ badge }}
         </span>
       </div>
-      <a
-        v-if="githubUrl"
-        :href="githubUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-600 hover:text-eths-orange transition-colors duration-300 ml-4 flex-shrink-0"
-      >
-        <Github :size="24" />
-      </a>
+      <div class="flex items-center gap-3 ml-4 flex-shrink-0">
+        <a
+          v-if="websiteUrl"
+          :href="websiteUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-eths-orange transition-colors duration-300"
+          title="Visit website"
+        >
+          <ExternalLink :size="24" />
+        </a>
+        <a
+          v-if="githubUrl"
+          :href="githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-600 hover:text-eths-orange transition-colors duration-300"
+          title="View on GitHub"
+        >
+          <Github :size="24" />
+        </a>
+      </div>
     </div>
 
     <p class="text-gray-600 leading-relaxed mb-4">{{ description }}</p>

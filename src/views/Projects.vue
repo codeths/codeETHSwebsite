@@ -14,6 +14,13 @@ const currentProject = ref({
 
 const projects = ref([
   {
+    name: 'ETHSbell',
+    description: 'Bell schedule and period tracking app for ETHS',
+    techStack: ['Vue', 'JavaScript'],
+    githubUrl: 'https://github.com/codeths/ethsbell-rewrite',
+    websiteUrl: 'https://ethsbell.app/'
+  },
+  {
     name: 'PE Scheduling Tool',
     description: 'Tool for managing PE class schedules at ETHS',
     techStack: ['Vue', 'Firebase'],
@@ -29,13 +36,15 @@ const projects = ref([
     name: 'EditorETHS',
     description: 'Text editor built for ETHS students',
     techStack: ['Vue', 'JavaScript'],
-    githubUrl: 'https://github.com/codeths/EditorETHS'
+    githubUrl: 'https://github.com/codeths/EditorETHS',
+    websiteUrl: 'https://editoreths.onrender.com/'
   },
   {
     name: 'Kitcoin',
     description: 'ETHS school currency and rewards system',
     techStack: ['Vue', 'Firebase', 'Python'],
-    githubUrl: 'https://github.com/codeths/kitcoin'
+    githubUrl: 'https://github.com/codeths/kitcoin',
+    websiteUrl: 'https://kitcoin.app'
   }
 ])
 </script>
@@ -86,6 +95,7 @@ const projects = ref([
               :description="project.description"
               :tech-stack="project.techStack"
               :github-url="project.githubUrl"
+              :website-url="project.websiteUrl"
             />
           </div>
         </div>
