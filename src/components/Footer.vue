@@ -13,7 +13,7 @@ import { Github } from 'lucide-vue-next'
 
         <div class="flex items-center space-x-6">
           <a
-            href="https://github.com/Pogo-Bash"
+            href="https://github.com/codeths"
             target="_blank"
             rel="noopener noreferrer"
             class="flex items-center space-x-2 hover:text-eths-orange transition-colors duration-300"

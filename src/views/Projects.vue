@@ -1,44 +1,41 @@
 <script setup>
 import Hero from '../components/Hero.vue'
 import ProjectCard from '../components/ProjectCard.vue'
+import { Github } from 'lucide-vue-next'
 import { ref } from 'vue'
+
+const currentProject = ref({
+  name: 'Elective Decision Tree',
+  description: 'Interactive tool to help ETHS students choose their electives',
+  techStack: ['Vue', 'JavaScript'],
+  githubUrl: 'https://github.com/codeths/elective-decision-tree',
+  badge: 'In Development'
+})
 
 const projects = ref([
   {
-    name: 'CodeETHS Website',
-    description: 'Our official club website built with Vue 3, showcasing who we are and what we do.',
-    techStack: ['Vue 3', 'Vite', 'Tailwind CSS', 'Vue Router'],
-    githubUrl: 'https://github.com/Pogo-Bash/codeeths-website'
+    name: 'PE Scheduling Tool',
+    description: 'Tool for managing PE class schedules at ETHS',
+    techStack: ['Vue', 'Firebase'],
+    githubUrl: 'https://github.com/codeths/pe'
   },
   {
-    name: 'Student Portal',
-    description: 'A comprehensive student resource portal with assignment tracking and study tools.',
-    techStack: ['React', 'Firebase', 'Material-UI'],
-    githubUrl: 'https://github.com/Pogo-Bash'
+    name: 'Grade Calculator',
+    description: 'Calculate and track your grades for ETHS courses',
+    techStack: ['JavaScript', 'Vue'],
+    githubUrl: 'https://github.com/codeths/grade-calculator'
   },
   {
-    name: 'ETHS Event Manager',
-    description: 'Event management system for school activities with real-time updates and notifications.',
-    techStack: ['Vue 3', 'Node.js', 'MongoDB', 'Socket.io'],
-    githubUrl: 'https://github.com/Pogo-Bash'
+    name: 'EditorETHS',
+    description: 'Text editor built for ETHS students',
+    techStack: ['Vue', 'JavaScript'],
+    githubUrl: 'https://github.com/codeths/EditorETHS'
   },
   {
-    name: 'Code Challenge Platform',
-    description: 'Interactive coding challenges for club members to practice algorithms and problem-solving.',
-    techStack: ['Python', 'Flask', 'PostgreSQL'],
-    githubUrl: 'https://github.com/Pogo-Bash'
-  },
-  {
-    name: 'Club Resource Library',
-    description: 'Curated collection of tutorials, documentation, and learning resources for members.',
-    techStack: ['Next.js', 'MDX', 'Vercel'],
-    githubUrl: 'https://github.com/Pogo-Bash'
-  },
-  {
-    name: 'Attendance Tracker',
-    description: 'Simple and efficient attendance tracking system for club meetings and events.',
-    techStack: ['Vue 3', 'Firebase', 'PWA'],
-    githubUrl: 'https://github.com/Pogo-Bash'
+    name: 'Kitcoin',
+    description: 'ETHS school currency and rewards system',
+    techStack: ['Vue', 'Firebase', 'Python'],
+    githubUrl: 'https://github.com/codeths/kitcoin'
   }
 ])
 </script>
@@ -48,7 +45,7 @@ const projects = ref([
     <!-- Hero Section -->
     <Hero
       title="Our Projects"
-      subtitle="Explore the innovative projects built by CodeETHS members"
+      subtitle="Building tools and applications for ETHS students"
       :gradient="false"
     />
 
@@ -58,21 +55,52 @@ const projects = ref([
         <div class="text-center max-w-3xl mx-auto mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-eths-navy mb-4">What We're Building</h2>
           <p class="text-lg text-gray-700 leading-relaxed">
-            From web applications to automation tools, our members collaborate on real-world projects
-            that solve problems and make an impact in our school community.
+            CodeETHS creates practical tools and applications designed specifically for ETHS students.
+            Our projects help with course planning, scheduling, grade tracking, and more.
           </p>
         </div>
 
+        <!-- Current Project Featured Section -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-eths-navy mb-6 text-center">Current Project</h3>
+          <div class="max-w-4xl mx-auto">
+            <ProjectCard
+              :name="currentProject.name"
+              :description="currentProject.description"
+              :tech-stack="currentProject.techStack"
+              :github-url="currentProject.githubUrl"
+              :featured="true"
+              :badge="currentProject.badge"
+            />
+          </div>
+        </div>
+
         <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProjectCard
-            v-for="project in projects"
-            :key="project.name"
-            :name="project.name"
-            :description="project.description"
-            :tech-stack="project.techStack"
-            :github-url="project.githubUrl"
-          />
+        <div class="mb-12">
+          <h3 class="text-2xl font-bold text-eths-navy mb-6 text-center">Our Projects</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProjectCard
+              v-for="project in projects"
+              :key="project.name"
+              :name="project.name"
+              :description="project.description"
+              :tech-stack="project.techStack"
+              :github-url="project.githubUrl"
+            />
+          </div>
+        </div>
+
+        <!-- View All Projects Button -->
+        <div class="text-center mb-12">
+          <a
+            href="https://github.com/codeths"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center space-x-3 bg-eths-navy text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"
+          >
+            <Github :size="24" />
+            <span class="text-lg">View All Projects on GitHub</span>
+          </a>
         </div>
 
         <!-- Call to Action -->
@@ -86,17 +114,9 @@ const projects = ref([
               Join us to start building something amazing!
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="https://github.com/Pogo-Bash"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="bg-eths-orange text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"
-              >
-                View on GitHub
-              </a>
               <router-link
                 to="/contact"
-                class="bg-eths-navy text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"
+                class="bg-eths-orange text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"
               >
                 Get in Touch
               </router-link>

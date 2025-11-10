@@ -142,7 +142,7 @@ import { BookOpen, Code, Users, Target, Calendar, Github } from 'lucide-vue-next
           and feel free to contribute!
         </p>
         <a
-          href="https://github.com/Pogo-Bash"
+          href="https://github.com/codeths"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center space-x-2 bg-eths-orange text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"

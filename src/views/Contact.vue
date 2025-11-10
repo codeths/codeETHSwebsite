@@ -122,7 +122,7 @@ import { Calendar, MapPin, Github, Mail } from 'lucide-vue-next'
                 Check out our open-source projects and contribute to the codebase.
               </p>
               <a
-                href="https://github.com/Pogo-Bash"
+                href="https://github.com/codeths"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-block bg-eths-navy text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-300 ease-in-out hover:scale-105"

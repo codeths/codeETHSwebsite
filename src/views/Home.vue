@@ -83,7 +83,7 @@ import { BookOpen, Wrench, Users, Github, Calendar } from 'lucide-vue-next'
             Check out our open-source projects, contribute to ongoing work, and see what the CodeETHS community is building.
           </p>
           <a
-            href="https://github.com/Pogo-Bash"
+            href="https://github.com/codeths"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center space-x-2 bg-white text-eths-navy font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105"
